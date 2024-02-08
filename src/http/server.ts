@@ -1,26 +1,15 @@
 import fastify from 'fastify'
-import { PrismaClient } from '@prisma/client'
-import { z } from 'zod'
+import cookie from '@fastify/cookie'
+import { route } from './route'
 
 const app = fastify()
-const prisma = new PrismaClient()
 
-app.post('/polls', async (request, reply) => {
-
-  const createPollBody = z.object({
-    title: z.string()
-  })
-
-  const { title } = createPollBody.parse(request.body)
-
-  await prisma.poll.create({
-    data: {
-      title
-    }
-  })
-
-  return title
+app.register(cookie, {
+  secret: 'polls-app-nlw',
+  hook: 'onRequest',
 })
+
+app.register(route)
 
 app.listen({
   port: 3333
