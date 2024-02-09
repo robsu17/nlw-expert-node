@@ -38,6 +38,7 @@ docker compose up -d
 ## Usage
 
 1. Inicie a aplicação usando
+
 ```bash
 npm run dev
 ```
