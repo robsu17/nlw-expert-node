@@ -105,9 +105,11 @@ WS /polls/:pollId/results - Retorna o resultado da enquete específica em tempo 
 ```
 
 ## TECHs
-Esse projeto utiliza [PostgresSQL](https://www.postgresql.org/) como banco de dados.
-Também utiliza [Redis](https://redis.io/)
+ - Fastify
+ - Websocket
+ - PostgreSQL
+ - Nodejs
 
-## Contributing
+## Considerações
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request to the repository.
+Durante o evento, obtive uma compreensão abrangente dos conceitos fundamentais dos websockets e sua aplicação em cenários reais. Além disso, adquiri conhecimento sobre a integração do Redis como uma solução de cache, otimizando a contagem de votos em enquetes e melhorando a eficiência operacional do sistema.
